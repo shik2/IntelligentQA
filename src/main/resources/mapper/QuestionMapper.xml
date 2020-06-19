@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.appleyk.dao.QuestionMapper" >
+
+    <select id="getQuestions"  resultType="com.appleyk.domain.Question">
+        SELECT * FROM question
+    </select>
+
+    <insert id="saveQuestion" parameterType="com.appleyk.domain.Question" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO question
+        (`id`,
+        `query`)
+        VALUES (#{id},
+        #{query});
+    </insert>
+</mapper>
